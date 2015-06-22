@@ -119,8 +119,10 @@ function New-SSRSDataSource (
 	$Definition = New-Object -TypeName SSRS.ReportingService2010.DataSourceDefinition
 	$Definition.ConnectString = $ConnProps.ConnectString
 	$Definition.Extension = $ConnProps.Extension
-	if ([Convert]::ToBoolean($ConnProps.IntegratedSecurity)) {
-		$Definition.CredentialRetrieval = 'Integrated'
+	if ([bool]($ConnProps.PSobject.Properties.name -match "IntegratedSecurity")) {
+		if ([Convert]::ToBoolean($ConnProps.IntegratedSecurity)) {
+			$Definition.CredentialRetrieval = 'Integrated'
+		}
 	}
 
 	$DataSource = New-Object -TypeName PSObject -Property @{
