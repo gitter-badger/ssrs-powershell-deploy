@@ -29,6 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Deploy-SSRSProject.ps1" />
+    <Compile Include="Deploy-SSRSSolution.ps1" />
     <Compile Include="Get-SSRSProjectConfiguration.ps1" />
     <Compile Include="New-SSRSWebServiceProxy.ps1" />
     <Compile Include="Usage-FromCredentialFiles.ps1" />
